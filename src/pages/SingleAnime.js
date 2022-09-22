@@ -7,6 +7,9 @@ const SingleAnime = () => {
   const { animeInfo, loading } = useGlobalContext()
   if (loading) {
     return <Loading />
+  }
+  if (!animeInfo) {
+    return <h3 className='section-title'>no animes to display</h3>
   } else {
     const { title, synopsis, images, episodes, aired, url } = animeInfo
     return (
